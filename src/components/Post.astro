@@ -1,0 +1,18 @@
+---
+    const { post:{title,description,content, created_at,id} } = Astro.props;
+---
+
+<a href={`/posts/${id}`}>
+    <article class="bg-[#1f2937] text-white max-w-sm px-5 py-6 flex flex-col gap-2 rounded ">
+        <img src="https://www.mundodeportivo.com/alfabeta/hero/2023/11/satoru-gojo-podria-regresar-de-este-modo-segun-esta-teoria-de-jujutsu-kaisen.jpg?width=768&aspect_ratio=16:9&format=nowebp" 
+        alt=""
+        class="rounded"
+        >
+        <h2 class="text-2xl font-bold">{title}</h2>
+        <p>{description}</p>
+        <p class="text-zinc-300">
+            {content.slice(0,100)+ "..."}
+        </p>
+        <p class="text-zinc-300">{new Date(created_at).toLocaleDateString()}  - 16 min read</p>
+    </article>
+</a>
